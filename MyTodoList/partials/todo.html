@@ -1,0 +1,12 @@
+<h1>Todo List</h1>
+
+<form name="NewTodo" ng-submit="addNewTodo()">
+	<input type=text name="label" ng-model="newTodoLabel" placeholder="Type In New Task" autofocus class='large'>
+	<a href='' class='btn' ng-click="addNewTodo()"><i class='icon-plus'></i> Add</a>
+</form>
+<ul class=todos>
+	<li ng-repeat="todo in todos" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+		<input type=checkbox ng-model="todo.completed">
+		{{todo.label}}
+	</li>
+</ul>
