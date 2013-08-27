@@ -1,7 +1,5 @@
 'use strict';
 
-var onlineStatusApp = angular.module('onlineStatusApp', []);
-
 onlineStatusApp.factory('onlineStatus', ["$window", "$rootScope", function ($window, $rootScope) {
     var onlineStatus = {};
 
@@ -23,11 +21,3 @@ onlineStatusApp.factory('onlineStatus', ["$window", "$rootScope", function ($win
 
     return onlineStatus;
 }]);
-    
-onlineStatusApp.controller('OnlineStatusCtrl', function OnlineStatusCtrl( $scope, onlineStatus ) {
-    $scope.onlineStatus = onlineStatus;
-    
-    $scope.$watch('onlineStatus.isOnline()', function(online) {
-        $scope.online_status_string = online ? 'online' : 'offline';
-    });
-});
